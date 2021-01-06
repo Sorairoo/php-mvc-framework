@@ -4,7 +4,7 @@ namespace App\Controllers;
 
 class PostController
 {
-    protected $layout = 'layout/index.tpl.php';
+    protected $layout = '../layout/index.tpl.php';
     public $name = 'Hello World';
 public function __construct()
 {
@@ -22,7 +22,7 @@ public function __construct()
     {
       $message = ' this is a post message';
       ob_start();
-      require_once __DIR__.'/../Views/post.tpl.php';
+      require_once __DIR__.'/../views/post.tpl.php';
       $this->content = ob_get_contents();
       ob_end_clean();
     }

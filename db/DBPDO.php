@@ -2,16 +2,11 @@
 
 namespace App\DB;
 
-/**
- * Description of DBPDO
- *
- * @author Hidran
- */
 class DbPdo
 {
     protected $conn;
     protected static $instance;
-    //uso patter singleton per garantire una sola istanza della classe
+    //uso pattern singleton per garantire una sola istanza della classe
     public static function getInstance(array $options): DbPdo
     {
         if (!static::$instance) {

@@ -4,9 +4,9 @@ namespace App\DB;
 
 class DbPdo
 {
-    protected $conn;
+    private $conn;
     protected static $instance;
-    //uso pattern singleton per garantire una sola istanza della classe
+
     public static function getInstance(array $options): DbPdo
     {
         if (!static::$instance) {
@@ -16,7 +16,7 @@ class DbPdo
 
     }
 
-    protected function __construct(array $options)
+    private function __construct(array $options)
     {
 
         $this->conn = new \PDO($options['dsn'], $options['user'], $options['password']);
